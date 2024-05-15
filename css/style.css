@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color: #E44077;
+    font-family: "Poppins", monospace;
+    color: rgb(73, 64, 64);
+    justify-content: center;
+}
+
+html, body {
+  height: 100%; /* Ensures that the html and body take full height of the viewport */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  overflow: hidden; /* Prevents scrollbars */
+}
+
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  width: 100%;
+}
+
+.wrap {
+  display: flex; 
+  flex-direction: column;
+  height: 90%;
+  overflow: auto;
+}
+
+footer {
+  height: 10%;
+}
+
+.background{
+    background-color: antiquewhite;
+    justify-content: center;
+    border-radius: 2%;
+    flex-direction: column;
+    padding: 50px;
+    align-items: center;
+    display: flex;
+    width:45%;
+    height: 100%;
+    margin: 0 auto;
+    margin-bottom: 50vh;
+    box-shadow: .8em .8em 15px rgba(0,0,0,.3);
+}
+
+.buttonOption{
+  padding: 30px;
+  border-radius: 5px;
+  border-color: #ddd8cb;
+  background-image: url("../images/Hearts.png");
+  background-size: cover;
+}
+
+.card {
+  width: 80%;
+  height: 50%;
+  background-color: #ddd8cb;
+  margin: 0 auto;
+  border-radius: 2%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3em;
+  box-shadow: .8em .8em 15px rgba(0,0,0,.3);
+   -ms-transform: rotate(2.5deg);
+    -webkit-transform: rotate(2.5deg);
+    transform: rotate(2.5deg);
+  -moz-transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+  max-height: 100%;
+    overflow: auto;
+}
