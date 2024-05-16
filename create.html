@@ -14,24 +14,22 @@
       <div class="letter">
         <h1>Fill out the form</h1>
         <section class="wrap">
-          <form name="createLetter" id="createLetter" action="index.html" onsubmit="return validateForm()" method="post">
+          <form name="createLetter" id="createLetter" onsubmit="return validateForm()" method="post">
             <label for="toName">To</label><br>
-            <input type="text" id="toName" name="toName" placeholder=""><br>
+            <input type="text" id="toName" name="toName" placeholder="To Name"><br>
             <label for="message">Message</label><br>
             <textarea id="message" name="message" rows="5" cols="50%" placeholder="Your eyes are like smoldering coals, merciless as they burn my soul in the most delightful way. Love you."></textarea><br>
             <label for="background">Choose a background design:&nbsp;</label>
-            <select name="background" id="selectBackground" form="createLetter">
-              <option value="Hearts">Hearts</option>
-              <option value="Teddybear">Teddy Bears</option>
-            </select><br>
-            <button type="button" class="buttonOption">Hearts</button>
+            <div>
+              <button type="button" id="noneButton" class="buttonOption">None</button>
+              <button type="button" id="heartsButton" class="buttonOption hearts">Hearts</button>
+              <button type="button" id="teddyButton" class="buttonOption bears">Teddy Bear</button>
+              <button type="button" id="gradiantButton" class="buttonOption gradient">Gradient</button>
+            </div>
             <label for="fromName">From</label><br>
-            <input type="text" id="fromName" name="fromName" placeholder=""><br>
-            <input type="submit" value="Submit">
+            <input type="text" id="fromName" name="fromName" placeholder="From Name"><br><br>
+            <input class="buttonSend" type="submit" value="Submit">
           </form>
-          <p>I am writing you this letter to let you know how I feel about you.
-            Your eyes are like smoldering coals, merciless as they burn my soul in the most delightful way. Love you.
-          </p>
         </section>
       </div>
     </div>

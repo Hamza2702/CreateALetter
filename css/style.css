@@ -18,8 +18,8 @@ textarea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-
-  width: 100%;
+  resize: none;
+  color:#ee2270;
 }
 
 .wrap {
@@ -33,10 +33,17 @@ footer {
   height: 10%;
 }
 
+.buttonSend{
+  padding: 10px;
+  border-radius: 5px;
+  color: #494040;
+  border-width: 1px;
+}
+
 .background{
-    background-color: antiquewhite;
+    background-color: rgb(202, 187, 167);
     justify-content: center;
-    border-radius: 2%;
+    border-radius: 2%; 
     flex-direction: column;
     padding: 50px;
     align-items: center;
@@ -50,10 +57,29 @@ footer {
 
 .buttonOption{
   padding: 30px;
+  font-size: 15px;
   border-radius: 5px;
   border-color: #ddd8cb;
-  background-image: url("../images/Hearts.png");
   background-size: cover;
+  transition: font-size .2s ease;
+}
+
+.buttonOption:hover{
+  font-size: 20px;
+}
+
+.hearts{
+  background-image: url("../images/Hearts.png");
+}
+
+.bears{
+  background-image: url("../images/bears.jpeg");
+}
+
+.gradient{
+  background: #355C7D;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .card {
@@ -74,5 +100,5 @@ footer {
   -o-transition: all .5s ease;
   transition: all .5s ease;
   max-height: 100%;
-    overflow: auto;
+  overflow: auto;
 }
