@@ -2,4 +2,12 @@
 
 Compose a letter for a special someone
 
-Customise between different backgrounds and designs
+Customize between different backgrounds and designs
+
+
+### Possible To-Do:
+As a perfectionist, I always like to add onto my projects.
+- Responsive
+- Customizable title
+- More backgrounds
+- Choose font colour
