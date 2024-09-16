@@ -8,10 +8,10 @@ body {
 }
 
 html, body {
-  height: 100%; /* Ensures that the html and body take full height of the viewport */
-  margin: 0; /* Removes default margin */
-  padding: 0; /* Removes default padding */
-  overflow: hidden; /* Prevents scrollbars */
+  height: 100%; 
+  margin: 0; 
+  padding: 0; 
+  overflow: hidden; 
 }
 
 textarea {
@@ -19,7 +19,6 @@ textarea {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   resize: none;
-  color:#ee2270;
 }
 
 .wrap {
@@ -36,8 +35,10 @@ footer {
 .buttonSend{
   padding: 10px;
   border-radius: 5px;
-  color: #494040;
+  color: #ddd8cb;
   border-width: 1px;
+  background: #494040;  /* fallback for old browsers */
+
 }
 
 .background{
