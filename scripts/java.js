@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     switch(selectOption) {
         case 'None':
             card.style.backgroundImage = '';
-            card.style.color = 'rgb(73, 64, 64)';
+            card.style.color = 'rgb(221,216,203)';
             break;
         case 'Hearts':
             card.style.backgroundImage = 'url("images/Hearts.png")';
@@ -109,3 +109,4 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('selectOption', 'Gradient');
     });
 });
+        
