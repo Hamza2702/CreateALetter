@@ -1,8 +1,41 @@
-function aaa(){
-    const form = document.querySelector('form');
-    const data = new URLSearchParams(new FormData(form).entries());
+document.addEventListener('DOMContentLoaded', function() {
+    let toName = localStorage.getItem('toName');
+    let message = localStorage.getItem('message');
+    let selectOption = localStorage.getItem('selectOption');
+    let fromName = localStorage.getItem('fromName');
 
-}
+    document.getElementById('toName').textContent = toName;
+    document.getElementById('message').textContent = message;
+    document.getElementById('fromName').textContent = fromName;
+
+    const card = document.getElementById('confirmationCard');
+
+    switch(selectOption) {
+        case 'None':
+            card.style.backgroundImage = '';
+            card.style.color = 'rgb(73, 64, 64)';
+            break;
+        case 'Hearts':
+            card.style.backgroundImage = 'url("images/Hearts.png")';
+            card.style.backgroundSize = 'cover';
+            card.style.color = '#ee2270';
+            break;
+        case 'Teddy Bear':
+            card.style.backgroundImage = 'url("images/bears.jpeg")';
+            card.style.backgroundSize = 'cover';
+            card.style.color = 'rgb(20, 21, 23)';
+            card.style.fontWeight = 'bold';
+            card.style.fontSize = '16px';
+            break;
+        case 'Gradient':
+            card.style.background = '#355C7D';
+            card.style.background = '-webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D)';
+            card.style.background = 'linear-gradient(to right, #C06C84, #6C5B7B, #355C7D)';
+            card.style.color = '#00ffff';
+            break;
+    }
+});
+
 function validateForm() {
     let x = document.forms["createLetter"]["toName"].value;
     let y = document.forms["createLetter"]["message"].value;
@@ -20,52 +53,59 @@ function validateForm() {
         return false;
     }
 
-    showPopup()
+    saveFormData();
+    window.location.href = "index.html"; // Redirect
+    return false;
 }
 
-function showPopup(){
-    let toName = document.getElementById('toName').value;
-    let message = document.getElementById('message').value;
-    let selectOption = document.getElementById('selectBackground').value;
+function saveFormData() {
+    let toName = document.getElementById('form-name').value;
+    let message = document.getElementById('form-message').value;
     let fromName = document.getElementById('fromName').value;
+    let selectOption = localStorage.getItem('selectOption'); // Retrieve background
 
-    let confirmationMessage = `To: ${toName}\n`;
-    confirmationMessage += `Message: ${message}\n`;
-    confirmationMessage += `Background: ${selectOption}\n`;
-    confirmationMessage += `From: ${fromName}`;
-
-    alert(confirmationMessage);
+    localStorage.setItem('toName', toName);
+    localStorage.setItem('message', message);
+    localStorage.setItem('selectOption', selectOption);
+    localStorage.setItem('fromName', fromName);
 }
 
-// Get references to the elements
-const noneButton = document.getElementById('noneButton');
-const heartsButton = document.getElementById('heartsButton');
-const teddyButton = document.getElementById('teddyButton');
-const gradiantButton = document.getElementById('gradiantButton');
-const card = document.querySelector('.card');
+document.addEventListener('DOMContentLoaded', function() {
+    const noneButton = document.getElementById('noneButton');
+    const heartsButton = document.getElementById('heartsButton');
+    const teddyButton = document.getElementById('teddyButton');
+    const gradiantButton = document.getElementById('gradiantButton');
+    const card = document.querySelector('.card');
+    const sendButton = document.getElementById('buttonSend');
 
-noneButton.addEventListener('click', function(){
-    card.style.backgroundImage = '';
-    card.style.color = 'rgb(73, 64, 64)';
-});
+    noneButton.addEventListener('click', function(){
+        card.style.backgroundImage = '';
+        card.style.color = 'rgb(73, 64, 64)';
+        localStorage.setItem('selectOption', 'None');
+    });
 
-// Add event listener to the heart button
-heartsButton.addEventListener('click', function() {
-    // Change the background image and size of the card
-    card.style.backgroundImage = 'url("/images/Hearts.png")';
-    card.style.backgroundSize = 'cover';
-    card.style.color = '#ee2270';
-});
+    heartsButton.addEventListener('click', function() {
+        card.style.backgroundImage = 'url("images/Hearts.png")';
+        card.style.backgroundSize = 'cover';
+        card.style.color = '#ee2270';
+        localStorage.setItem('selectOption', 'Hearts');
+    });
 
-teddyButton.addEventListener('click', function(){
-    card.style.backgroundImage = 'url("/images/bears.jpeg")';
-    card.style.backgroundSize = 'cover';
-    card.style.color = 'rgb(73, 64, 64)';
-});
+    teddyButton.addEventListener('click', function(){
+        card.style.backgroundImage = 'url("images/bears.jpeg")';
+        card.style.backgroundSize = 'cover';
+        card.style.color = 'rgb(20, 21, 23)';
+        card.style.fontWeight = 'bold';
+        card.style.fontSize = '16px';
+        localStorage.setItem('selectOption', 'Teddy Bear');
+    });
+    
 
-gradiantButton.addEventListener('click', function(){
-    card.style.background = '#355C7D';
-    card.style.background = '-webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D)';  /* Chrome 10-25, Safari 5.1-6 */
-    card.style.background = 'linear-gradient(to right, #C06C84, #6C5B7B, #355C7D)'; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    card.style.color = '#00ffff';
+    gradiantButton.addEventListener('click', function(){
+        card.style.background = '#355C7D';
+        card.style.background = '-webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D)';
+        card.style.background = 'linear-gradient(to right, #C06C84, #6C5B7B, #355C7D)';
+        card.style.color = '#00ffff';
+        localStorage.setItem('selectOption', 'Gradient');
+    });
 });
