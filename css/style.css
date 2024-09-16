@@ -49,7 +49,7 @@ footer {
     padding: 50px;
     align-items: center;
     display: flex;
-    width:45%;
+    width: 50%;
     height: 100%;
     margin: 0 auto;
     margin-bottom: 50vh;
@@ -102,4 +102,51 @@ footer {
   transition: all .5s ease;
   max-height: 100%;
   overflow: auto;
+}
+
+/* Media Query */
+
+@media (min-width: 320px){
+
+  .background{
+    padding: 10px;
+    width: 70%;
+  }
+
+  h1{
+    font-size: 20px;
+  }
+
+  p{
+    font-size: 12px;
+  }
+
+  .card{
+    padding: 20px;
+    height: 40%;
+  }
+}
+
+@media (min-width: 768px){
+
+  .background{
+    padding: 0px;
+    width: 70%;
+  }
+
+  h1{
+    font-size: 26px;
+  }
+
+  p{
+    font-size: 16px;
+  }
+
+  .letter{
+    padding: 10px;
+  }
+
+  .card{
+    padding: 0px;
+  }
 }
